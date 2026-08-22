@@ -36,6 +36,11 @@
   gap: clamp(2rem, 7vw, 7rem);
 }
 
+.columns.editorial-image > div {
+  align-items: stretch;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
 .columns.boundary > div > div:first-child {
   color: var(--bridge-amber, var(--link-color));
   font-family: var(--bridge-serif, var(--heading-font-family));
@@ -45,4 +50,38 @@
 
 .columns.boundary > div > div:last-child {
   max-width: 38rem;
+}
+
+.columns.editorial-image > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columns.editorial-image > div > .columns-img-col {
+  overflow: hidden;
+  border: 1px solid var(--bridge-line, #dadada);
+}
+
+.columns.editorial-image > div > .columns-img-col img {
+  height: 100%;
+  min-height: 24rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 62% center;
+  filter: saturate(0.82) contrast(1.06);
+}
+
+@media (width >= 900px) {
+  .columns.editorial-image > div > div:first-child {
+    flex: 0 1 42%;
+  }
+
+  .columns.editorial-image > div > .columns-img-col {
+    flex: 1 1 58%;
+  }
+
+  .columns.editorial-image > div > .columns-img-col img {
+    aspect-ratio: 16 / 11;
+  }
 }
