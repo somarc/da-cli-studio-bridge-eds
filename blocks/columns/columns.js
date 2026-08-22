@@ -1,5 +1,8 @@
 export default function decorate(block) {
-  const cols = [...block.firstElementChild.children];
+  const firstRow = block.firstElementChild;
+  if (!firstRow) return;
+
+  const cols = [...firstRow.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
   // setup image columns

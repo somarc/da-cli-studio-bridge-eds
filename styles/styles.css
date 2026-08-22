@@ -40,6 +40,27 @@
   --nav-height: 64px;
 }
 
+body.bridge {
+  --background-color: #080909;
+  --light-color: #151516;
+  --dark-color: #050505;
+  --text-color: #f1eadc;
+  --link-color: #e7b65a;
+  --link-hover-color: #ffd58a;
+  --bridge-ink: #080909;
+  --bridge-panel: #111212;
+  --bridge-panel-raised: #181817;
+  --bridge-muted: #aaa395;
+  --bridge-line: rgb(231 182 90 / 22%);
+  --bridge-amber: #e7b65a;
+  --bridge-oxblood: #651f25;
+  --bridge-serif: georgia, 'Times New Roman', serif;
+
+  background:
+    radial-gradient(circle at 86% 8%, rgb(101 31 37 / 24%), transparent 34rem),
+    var(--bridge-ink);
+}
+
 /* fallback fonts */
 @font-face {
   font-family: roboto-condensed-fallback;
@@ -322,4 +343,113 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* Bridge theme: placed after the baseline cascade by design. */
+body.bridge h1,
+body.bridge h2 {
+  font-family: var(--bridge-serif);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+body.bridge h1 {
+  font-size: clamp(3.4rem, 9vw, 8.5rem);
+  line-height: 0.85;
+}
+
+body.bridge h2 {
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+body.bridge h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+body.bridge :focus-visible {
+  outline: 3px solid var(--bridge-amber);
+  outline-offset: 4px;
+}
+
+body.bridge main > .section {
+  margin: 0;
+  padding: clamp(4.5rem, 10vw, 9rem) 0;
+  border-top: 1px solid rgb(241 234 220 / 10%);
+}
+
+body.bridge main > .section:first-of-type {
+  border-top: 0;
+  padding: 0;
+}
+
+body.bridge main > .section > div {
+  max-width: 1440px;
+}
+
+body.bridge main > .section.ink {
+  background: #050505;
+}
+
+body.bridge main > .section.oxblood {
+  background:
+    linear-gradient(115deg, rgb(101 31 37 / 88%), rgb(20 10 11 / 96%)),
+    #250d0f;
+}
+
+body.bridge main > .section.signal {
+  background: var(--bridge-amber);
+  color: #14110b;
+}
+
+body.bridge main > .section.signal a:any-link {
+  color: #14110b;
+}
+
+body.bridge main > .section .eyebrow,
+body.bridge main > .section > .default-content-wrapper > p:first-child > strong:first-child {
+  color: var(--bridge-amber);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+body.bridge main > .section.signal > .default-content-wrapper > p:first-child > strong:first-child {
+  color: #14110b;
+}
+
+body.bridge main > .section > .default-content-wrapper > p {
+  max-width: 48rem;
+  color: var(--bridge-muted);
+}
+
+body.bridge main > .section.signal > .default-content-wrapper > p {
+  color: #292116;
+}
+
+body.bridge .button-wrapper {
+  display: inline-flex;
+  margin: 1rem 0.65rem 0 0;
+}
+
+body.bridge a.button:any-link {
+  min-height: 3rem;
+  border-radius: 0;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.bridge a.button.primary:any-link,
+body.bridge a.button.accent:any-link {
+  border-color: var(--bridge-amber);
+  background: var(--bridge-amber);
+  color: #14110b;
+}
+
+body.bridge a.button.secondary:any-link {
+  border-color: rgb(241 234 220 / 36%);
+  color: var(--text-color);
 }

@@ -13,6 +13,16 @@ footer .footer p {
   margin: 0;
 }
 
+body.bridge footer {
+  border-top: 1px solid rgb(241 234 220 / 10%);
+  background: #050505;
+  color: var(--bridge-muted);
+}
+
+body.bridge footer a:any-link {
+  color: var(--text-color);
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
