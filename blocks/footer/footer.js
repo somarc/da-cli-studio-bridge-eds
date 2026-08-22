@@ -13,6 +13,12 @@ export default async function decorate(block) {
 
   // decorate footer DOM
   block.textContent = '';
+  if (!fragment) {
+    // Keep the page usable when the shared DA fragment is unavailable.
+    // eslint-disable-next-line no-console
+    console.warn(`Footer fragment could not be loaded: ${footerPath}`);
+    return;
+  }
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 

@@ -120,6 +120,12 @@ export default async function decorate(block) {
 
   // decorate nav DOM
   block.textContent = '';
+  if (!fragment) {
+    // Keep the page usable when the shared DA fragment is unavailable.
+    // eslint-disable-next-line no-console
+    console.warn(`Navigation fragment could not be loaded: ${navPath}`);
+    return;
+  }
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
@@ -131,7 +137,7 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
+  const brandLink = navBrand?.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';

@@ -31,3 +31,18 @@
     order: unset;
   }
 }
+
+.columns.boundary > div {
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.columns.boundary > div > div:first-child {
+  color: var(--bridge-amber, var(--link-color));
+  font-family: var(--bridge-serif, var(--heading-font-family));
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.8;
+}
+
+.columns.boundary > div > div:last-child {
+  max-width: 38rem;
+}

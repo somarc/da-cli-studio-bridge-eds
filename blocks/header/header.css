@@ -270,3 +270,31 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* Bridge theme: placed after the baseline cascade by design. */
+body.bridge header .nav-wrapper {
+  border-bottom: 1px solid rgb(241 234 220 / 10%);
+  background: rgb(8 9 9 / 92%);
+  color: var(--text-color);
+  backdrop-filter: blur(18px);
+}
+
+body.bridge header nav .nav-hamburger button {
+  background: transparent;
+}
+
+body.bridge header .nav-brand {
+  font-family: var(--bridge-serif);
+  font-weight: 400;
+}
+
+body.bridge header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  border: 1px solid var(--bridge-line);
+  background: var(--bridge-panel-raised);
+}
+
+@media (width < 900px) {
+  body.bridge header nav[aria-expanded='true'] {
+    background: #080909;
+  }
+}
